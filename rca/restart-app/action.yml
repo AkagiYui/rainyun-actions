@@ -1,0 +1,24 @@
+name: 'Rainyun RCA — Restart App'
+description: '重启指定的雨云 RCA 应用实例'
+
+inputs:
+  app-id:
+    description: 'RCA 应用 ID'
+    required: true
+  api-key:
+    description: '雨云 API Key，建议从 Secrets 读取'
+    required: true
+
+outputs:
+  result:
+    description: 'API 返回的原始结果（JSON 字符串）'
+  status:
+    description: '操作状态: success / failure'
+
+runs:
+  using: 'node24'
+  main: '../../dist/restart-app/index.js'
+
+branding:
+  icon: 'refresh-cw'
+  color: 'blue'
